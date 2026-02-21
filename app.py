@@ -193,6 +193,9 @@ def webhook():
     
     # Manejar POST (mensajes de WATI)
     global processed_messages
+
+    # FIX 1: Inicializar message_id antes del try para evitar NameError en el except
+    message_id = None
     
     try:
         # Obtener datos del webhook
